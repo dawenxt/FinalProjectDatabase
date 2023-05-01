@@ -90,9 +90,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(247, 534);
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.Location = new System.Drawing.Point(232, 537);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(87, 31);
+            this.btnDelete.Size = new System.Drawing.Size(137, 31);
             this.btnDelete.TabIndex = 33;
             this.btnDelete.Text = "Cancel";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -100,9 +101,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(247, 484);
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.Location = new System.Drawing.Point(232, 487);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 31);
+            this.btnAdd.Size = new System.Drawing.Size(137, 31);
             this.btnAdd.TabIndex = 32;
             this.btnAdd.Text = "Save";
             this.btnAdd.UseVisualStyleBackColor = true;
