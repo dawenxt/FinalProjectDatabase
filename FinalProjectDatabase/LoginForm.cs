@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //Rounded Corner Design
 using System.Runtime.InteropServices;
+// System.Data.OleDb is namespace in the .NET Framework that provides a set of classes for accessing data in a variety of data sources using the OLE DB data provider.
+using System.Data.OleDb;
 
 namespace FinalProjectDatabase
 {
@@ -25,6 +27,39 @@ namespace FinalProjectDatabase
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
+
+        // Connection to database
+        OleDbConnection conn;
+        // Commands to insert delete or update, select, and Reader (ExecuteReader() and ExecuteNonQuery())
+        OleDbCommand cmd;
+        // To Connect the Tools like datagridview, textbox direct to database
+        OleDbDataAdapter adapter;
+        // This is a column and rows in our database and inserting in our Forms ( Database access to Windows Form )
+
+        // Login using Database 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb";
+            string query = "SELECT COUNT(*) FROM loginAccount WHERE Username = @username AND Password = @password";
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            using (OleDbCommand command = new OleDbCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@username", txtUsername.Text);
+                command.Parameters.AddWithValue("@password", txtPassword.Text);
+                connection.Open();
+                int result = (int)command.ExecuteScalar();
+                if (result > 0)
+                {
+                    Form1 form1 = new Form1();
+                    form1.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password");
+                }
+            }
+        }
 
         public LoginForm()
         {
@@ -62,5 +97,7 @@ namespace FinalProjectDatabase
         {
             pnDes.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnDes.Width, pnDes.Height, 30, 30));
         }
+
+       
     }
 }

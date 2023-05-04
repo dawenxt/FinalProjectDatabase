@@ -34,7 +34,7 @@
             this.pnBg = new System.Windows.Forms.Panel();
             this.pnDes = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.pnPasswordDesign = new System.Windows.Forms.Panel();
             this.pnUsernameDesign = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,11 +53,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Lexend Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 1);
+            this.label2.Location = new System.Drawing.Point(17, -1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 15);
+            this.label2.Size = new System.Drawing.Size(70, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
@@ -95,7 +95,7 @@
             this.pbLogo.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pbLogo.ErrorImage = null;
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
-            this.pbLogo.Location = new System.Drawing.Point(905, 26);
+            this.pbLogo.Location = new System.Drawing.Point(906, 26);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(156, 146);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -103,23 +103,23 @@
             this.pbLogo.TabStop = false;
             this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(735, 470);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(508, 46);
-            this.textBox1.TabIndex = 7;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.Location = new System.Drawing.Point(735, 470);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(508, 46);
+            this.txtPassword.TabIndex = 7;
             // 
             // pnPasswordDesign
             // 
             this.pnPasswordDesign.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pnPasswordDesign.Controls.Add(this.label2);
-            this.pnPasswordDesign.Location = new System.Drawing.Point(746, 463);
+            this.pnPasswordDesign.Location = new System.Drawing.Point(746, 461);
             this.pnPasswordDesign.Name = "pnPasswordDesign";
-            this.pnPasswordDesign.Size = new System.Drawing.Size(106, 18);
+            this.pnPasswordDesign.Size = new System.Drawing.Size(106, 20);
             this.pnPasswordDesign.TabIndex = 1;
             this.pnPasswordDesign.Paint += new System.Windows.Forms.PaintEventHandler(this.pnPasswordDesign_Paint);
             // 
@@ -127,7 +127,7 @@
             // 
             this.pnUsernameDesign.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pnUsernameDesign.Controls.Add(this.label1);
-            this.pnUsernameDesign.Location = new System.Drawing.Point(746, 357);
+            this.pnUsernameDesign.Location = new System.Drawing.Point(746, 354);
             this.pnUsernameDesign.Name = "pnUsernameDesign";
             this.pnUsernameDesign.Size = new System.Drawing.Size(106, 20);
             this.pnUsernameDesign.TabIndex = 2;
@@ -136,11 +136,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Lexend Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 2);
+            this.label1.Location = new System.Drawing.Point(16, -1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 15);
+            this.label1.Size = new System.Drawing.Size(75, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Username";
             // 
@@ -149,64 +149,67 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(937, 183);
+            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Location = new System.Drawing.Point(915, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 33);
+            this.label3.Size = new System.Drawing.Size(141, 33);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Stock";
+            this.label3.Text = "       Stoxx";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Lexend SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(794, 240);
+            this.label4.Location = new System.Drawing.Point(794, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(391, 18);
+            this.label4.Size = new System.Drawing.Size(402, 25);
             this.label4.TabIndex = 8;
             this.label4.Text = "The best way to manage your Storage and Save ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Lexend SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(838, 258);
+            this.label5.Location = new System.Drawing.Point(838, 257);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(296, 18);
+            this.label5.Size = new System.Drawing.Size(307, 25);
             this.label5.TabIndex = 9;
             this.label5.Text = "Data Information and more features.";
             // 
             // btnLogin
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogin.Font = new System.Drawing.Font("Lexend SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.Location = new System.Drawing.Point(735, 576);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(508, 47);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Lexend SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(838, 772);
+            this.label7.Location = new System.Drawing.Point(830, 769);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 18);
+            this.label7.Size = new System.Drawing.Size(182, 25);
             this.label7.TabIndex = 12;
             this.label7.Text = "Login only as Admin!";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.MenuHighlight;
             this.linkLabel1.Location = new System.Drawing.Point(1006, 772);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(104, 18);
+            this.linkLabel1.Size = new System.Drawing.Size(105, 18);
             this.linkLabel1.TabIndex = 13;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Learn More.";
@@ -225,7 +228,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pnUsernameDesign);
             this.Controls.Add(this.pnPasswordDesign);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.pnBg);
             this.Controls.Add(this.txtUsername);
@@ -250,7 +253,7 @@
         private Panel pnBg;
         private PictureBox pbLogo;
         private Panel pnDes;
-        private TextBox textBox1;
+        private TextBox txtPassword;
         private Panel pnPasswordDesign;
         private Panel pnUsernameDesign;
         private Label label1;
