@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 // Rounded
 using System.Runtime.InteropServices;
+using System.Data.OleDb;
 
 namespace FinalProjectDatabase
 {
@@ -47,9 +48,28 @@ namespace FinalProjectDatabase
 
         }
 
+        // try Catch here Retrive username Details from Database
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Set up connection string to MS Access database
+            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb";
 
+            // Set up SQL query to retrieve username from database
+            string query = "SELECT username FROM loginAccount WHERE ID = ID"; // Replace 1 with the appropriate user ID
+
+            // Set up OleDbConnection and OleDbCommand objects
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            using (OleDbCommand command = new OleDbCommand(query, connection))
+            {
+                // Open the database connection
+                connection.Open();
+
+                // Execute the SQL query and retrieve the username
+                string username = (string)command.ExecuteScalar();
+
+                // Display the username in a label control
+                lblDetails.Text = "Logged in as: " + username;
+            }
         }
 
         // Bg Rounded corner of All Buttons
@@ -73,13 +93,19 @@ namespace FinalProjectDatabase
         // Button = New Order
         private void btnNeworder_Click(object sender, EventArgs e)
         {
-            formLoad(new myList());
+            
         }
 
         // Panel Logo Rounded
         private void panelLogo_Paint(object sender, PaintEventArgs e)
         {
             panelLogo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelLogo.Width, panelLogo.Height, 25, 25));
+        }
+
+        // STOCK INVENTORY BUTTON TO SHOW ANOTHER FORM
+        private void button2_Click(object sender, EventArgs e)
+        {
+            formLoad(new Stock());         
         }
     }
 }

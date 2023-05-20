@@ -42,7 +42,7 @@ namespace FinalProjectDatabase
         {
             if (progressBar1.Value < 10)
             {
-                progressBar1.Value += 5;
+                progressBar1.Value += 2;
 
                 label1.Text = "Analyzing Application.";
 
@@ -50,7 +50,7 @@ namespace FinalProjectDatabase
             }
             else if (progressBar1.Value < 20)
             {
-                progressBar1.Value += 5;
+                progressBar1.Value += 1;
 
                 label1.Text = "Please Wait..";
 
@@ -58,7 +58,7 @@ namespace FinalProjectDatabase
             }
             else if (progressBar1.Value < 30)
             {
-                progressBar1.Value += 5;
+                progressBar1.Value += 3;
 
                 label1.Text = "Please Wait....";
 
@@ -66,7 +66,7 @@ namespace FinalProjectDatabase
             }
             else if (progressBar1.Value < 40)
             {
-                progressBar1.Value += 5;
+                progressBar1.Value += 2;
 
                 label1.Text = "Data Updating..";
 
@@ -74,7 +74,7 @@ namespace FinalProjectDatabase
             }
             else if (progressBar1.Value < 50)
             {
-                progressBar1.Value += 5;
+                progressBar1.Value += 1;
 
                 label1.Text = "Connecting to MS Database..";
 
@@ -82,7 +82,7 @@ namespace FinalProjectDatabase
             }
             else if (progressBar1.Value < 60)
             {
-                progressBar1.Value += 5;
+                progressBar1.Value += 3;
 
                 label1.Text = "Loading.";
 
@@ -98,7 +98,7 @@ namespace FinalProjectDatabase
             }
             else if (progressBar1.Value < 80)
             {
-                progressBar1.Value += 5;
+                progressBar1.Value += 4;
 
                 label1.Text = "Loading...";
 
@@ -106,28 +106,25 @@ namespace FinalProjectDatabase
             }
             else if (progressBar1.Value < 90)
             {
-                progressBar1.Value += 5;
+                progressBar1.Value += 1;
 
                 label1.Text = "Loading....";
 
                 label2.Text = progressBar1.Value.ToString() + "%";
 
             }
-            else if (progressBar1.Value < 100)
+            else if (progressBar1.Value < 95)
             {
-                progressBar1.Value += 5;
+                progressBar1.Value += 1;
 
                 label1.Text = "Loading.....";
 
                 label2.Text = progressBar1.Value.ToString() + "%";
-            }
-            else
-            {
-                timer1.Stop();
-
-                Form1 frm1 = new Form1();
-                frm1.ShowDialog();
                
+                LoginForm frm1 = new LoginForm();
+                frm1.Show();
+                timer1.Stop();
+                this.Hide();
             }
 
         }

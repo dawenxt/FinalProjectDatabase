@@ -14,7 +14,7 @@ namespace FinalProjectDatabase
 
 
             // Change this in any Startup Form
-            Application.Run(new LoginForm());
+            Application.Run(new Form1());
         }
     }
 }

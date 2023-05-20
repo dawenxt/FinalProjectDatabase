@@ -70,7 +70,7 @@ namespace FinalProjectDatabase
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void pnBg_Paint(object sender, PaintEventArgs e)
@@ -78,26 +78,66 @@ namespace FinalProjectDatabase
             pnBg.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnBg.Width, pnBg.Height, 25, 25));
         }
 
-        private void pbLogo_Click(object sender, EventArgs e)
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            pbLogo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pbLogo.Width, pbLogo.Height, 25, 25));
+
         }
 
-        private void pnUsernameDesign_Paint(object sender, PaintEventArgs e)
+        private void txtUsername_Enter(object sender, EventArgs e)
         {
-            pnUsernameDesign.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnUsernameDesign.Width, pnUsernameDesign.Height, 10, 10));
+            if(txtUsername.Text == "Enter Username")
+            {
+                txtUsername.Text = "";
+                txtUsername.ForeColor = Color.Black;
+            }
         }
 
-        private void pnPasswordDesign_Paint(object sender, PaintEventArgs e)
+        private void pnDes_Leave(object sender, EventArgs e)
         {
-            pnPasswordDesign.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnPasswordDesign.Width, pnPasswordDesign.Height, 10, 10));
+            
         }
 
-        private void pnDes_Paint(object sender, PaintEventArgs e)
+        private void txtUsername_Leave(object sender, EventArgs e)
         {
-            pnDes.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnDes.Width, pnDes.Height, 30, 30));
+            if (txtUsername.Text == "")
+            {
+                txtUsername.Text = "Enter Username";
+                txtUsername.ForeColor = SystemColors.ActiveBorder;
+            }
         }
 
-       
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Enter Password")
+            {
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.Black;
+                txtPassword.PasswordChar = '*';
+            }
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "")
+            {
+                txtPassword.Text = "Enter Password";
+                txtPassword.ForeColor = SystemColors.ActiveBorder;
+                txtPassword.PasswordChar = '\0';
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '\0')
+            {
+                txtPassword.PasswordChar = '*';
+                
+            }
+            else
+            {
+                txtPassword.PasswordChar = '\0';
+               
+            }
+        }
     }
 }
