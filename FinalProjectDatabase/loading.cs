@@ -32,11 +32,6 @@ namespace FinalProjectDatabase
             timer1.Start();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         // Condition of Timer and Progress Bar
         private void timer1_Tick(object sender, EventArgs e)
         {

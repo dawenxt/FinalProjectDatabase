@@ -57,7 +57,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnBg2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.pnBgsearch = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -328,7 +328,7 @@
             // pnBg2
             // 
             this.pnBg2.BackColor = System.Drawing.Color.White;
-            this.pnBg2.Controls.Add(this.button5);
+            this.pnBg2.Controls.Add(this.btnEdit);
             this.pnBg2.Controls.Add(this.label9);
             this.pnBg2.Controls.Add(this.txtID);
             this.pnBg2.Controls.Add(this.label10);
@@ -359,15 +359,16 @@
             this.pnBg2.Size = new System.Drawing.Size(1270, 273);
             this.pnBg2.TabIndex = 35;
             // 
-            // button5
+            // btnEdit
             // 
-            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(1153, 196);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(88, 34);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Edit";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEdit.Location = new System.Drawing.Point(1153, 196);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(88, 34);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // pnBgsearch
             // 
@@ -632,7 +633,7 @@
         private Label label13;
         private DataGridViewTextBoxColumn Column1;
         private Panel pnBg2;
-        private Button button5;
+        private Button btnEdit;
         private Panel pnBgsearch;
         private Button button3;
         private Button button2;

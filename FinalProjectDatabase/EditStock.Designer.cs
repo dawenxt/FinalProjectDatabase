@@ -1,6 +1,6 @@
 ﻿namespace FinalProjectDatabase
 {
-    partial class UpdateOrder
+    partial class EditStock
     {
         /// <summary>
         /// Required designer variable.
@@ -240,13 +240,13 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(163, 10);
+            this.label11.Location = new System.Drawing.Point(136, 10);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(128, 25);
+            this.label11.Size = new System.Drawing.Size(185, 25);
             this.label11.TabIndex = 51;
-            this.label11.Text = "Order Update";
+            this.label11.Text = "Edit Stock Inventory";
             // 
-            // UpdateOrder
+            // EditStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,7 +272,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UpdateOrder";
+            this.Name = "EditStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateOrder";
             this.Load += new System.EventHandler(this.UpdateOrder_Load);

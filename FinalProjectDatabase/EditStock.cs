@@ -25,7 +25,7 @@ using System.Text.RegularExpressions;
 
 namespace FinalProjectDatabase
 {
-    public partial class UpdateOrder : Form
+    public partial class EditStock : Form
     {
         // Importing Rounded Corner
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -39,7 +39,7 @@ namespace FinalProjectDatabase
             int nHeightEllipse // width of ellipse
         );
 
-        public UpdateOrder()
+        public EditStock()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

@@ -29,6 +29,7 @@ namespace FinalProjectDatabase
         }
 
         // To change different Form using Panel
+        // Show multiple forms in Panel
         public void formLoad(object Form)
         {
             if (this.panel1.Controls.Count > 0)
@@ -49,6 +50,7 @@ namespace FinalProjectDatabase
         }
 
         // try Catch here Retrive username Details from Database
+        // Display name in login label text
         private void Form1_Load(object sender, EventArgs e)
         {
             // Set up connection string to MS Access database
@@ -90,6 +92,24 @@ namespace FinalProjectDatabase
             formLoad(new OrderHistory());
         }
 
+        // Button = Stock Inventory
+        private void button2_Click(object sender, EventArgs e)
+        {
+            formLoad(new Stock());
+        }
+
+        // Button = Settings
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            formLoad(new Settings());
+        }
+
+        // Button = Support
+        private void btnSupport_Click(object sender, EventArgs e)
+        {
+            formLoad(new Support());
+        }
+
         // Button = New Order
         private void btnNeworder_Click(object sender, EventArgs e)
         {
@@ -102,10 +122,6 @@ namespace FinalProjectDatabase
             panelLogo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelLogo.Width, panelLogo.Height, 25, 25));
         }
 
-        // STOCK INVENTORY BUTTON TO SHOW ANOTHER FORM
-        private void button2_Click(object sender, EventArgs e)
-        {
-            formLoad(new Stock());         
-        }
+        
     }
 }

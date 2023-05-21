@@ -39,8 +39,8 @@
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pnBg = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnSupport = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lblDetails = new System.Windows.Forms.Label();
@@ -155,8 +155,8 @@
             // pnBg
             // 
             this.pnBg.BackColor = System.Drawing.Color.DarkGray;
-            this.pnBg.Controls.Add(this.button4);
-            this.pnBg.Controls.Add(this.button3);
+            this.pnBg.Controls.Add(this.btnSettings);
+            this.pnBg.Controls.Add(this.btnSupport);
             this.pnBg.Controls.Add(this.button2);
             this.pnBg.Controls.Add(this.label6);
             this.pnBg.Controls.Add(this.btnHistory);
@@ -171,35 +171,37 @@
             this.pnBg.TabIndex = 7;
             this.pnBg.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBg_Paint);
             // 
-            // button4
+            // btnSettings
             // 
-            this.button4.BackColor = System.Drawing.Color.DarkGray;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Lexend Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(1, 465);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(260, 37);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "     Support";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnSettings.BackColor = System.Drawing.Color.DarkGray;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Lexend Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSettings.ForeColor = System.Drawing.Color.Black;
+            this.btnSettings.Location = new System.Drawing.Point(1, 420);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(260, 37);
+            this.btnSettings.TabIndex = 21;
+            this.btnSettings.Text = "     Settings";
+            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
-            // button3
+            // btnSupport
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Lexend Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(1, 421);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(260, 39);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "     Settings";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnSupport.BackColor = System.Drawing.Color.DarkGray;
+            this.btnSupport.FlatAppearance.BorderSize = 0;
+            this.btnSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupport.Font = new System.Drawing.Font("Lexend Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSupport.ForeColor = System.Drawing.Color.Black;
+            this.btnSupport.Location = new System.Drawing.Point(1, 465);
+            this.btnSupport.Name = "btnSupport";
+            this.btnSupport.Size = new System.Drawing.Size(260, 37);
+            this.btnSupport.TabIndex = 20;
+            this.btnSupport.Text = "     Support";
+            this.btnSupport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSupport.UseVisualStyleBackColor = false;
+            this.btnSupport.Click += new System.EventHandler(this.btnSupport_Click);
             // 
             // button2
             // 
@@ -283,7 +285,7 @@
         private Label lblDetails;
         private Button button2;
         private Label label6;
-        private Button button4;
-        private Button button3;
+        private Button btnSupport;
+        private Button btnSettings;
     }
 }

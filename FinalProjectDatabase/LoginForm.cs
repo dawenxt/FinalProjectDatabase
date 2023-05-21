@@ -34,9 +34,10 @@ namespace FinalProjectDatabase
         OleDbCommand cmd;
         // To Connect the Tools like datagridview, textbox direct to database
         OleDbDataAdapter adapter;
+
         // This is a column and rows in our database and inserting in our Forms ( Database access to Windows Form )
 
-        // Login using Database 
+        // Login using Database | Getting the username and password in Database List
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb";
@@ -56,11 +57,12 @@ namespace FinalProjectDatabase
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password");
+                    lblError.Text = "Invalid Username or Password";
                 }
             }
         }
 
+        // ROUNDED CORNER 
         public LoginForm()
         {
             InitializeComponent();
@@ -68,11 +70,9 @@ namespace FinalProjectDatabase
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+       
 
+        // ROUNDED CORNER
         private void pnBg_Paint(object sender, PaintEventArgs e)
         {
             pnBg.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnBg.Width, pnBg.Height, 25, 25));
@@ -83,6 +83,19 @@ namespace FinalProjectDatabase
 
         }
 
+        private void pnDes_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        // THIS CODES ARE FOR PLACEHOLDER OF USERNAME AND PASSWORD
+
+        // PLACEHOLDER FOR USERNAME
         private void txtUsername_Enter(object sender, EventArgs e)
         {
             if(txtUsername.Text == "Enter Username")
@@ -92,11 +105,8 @@ namespace FinalProjectDatabase
             }
         }
 
-        private void pnDes_Leave(object sender, EventArgs e)
-        {
-            
-        }
 
+        // EVENT LEAVE PLACEHOLDER USERNAME
         private void txtUsername_Leave(object sender, EventArgs e)
         {
             if (txtUsername.Text == "")
@@ -106,6 +116,7 @@ namespace FinalProjectDatabase
             }
         }
 
+        // PLACEHOLDER FOR PASSWORD
         private void txtPassword_Enter(object sender, EventArgs e)
         {
             if (txtPassword.Text == "Enter Password")
@@ -116,6 +127,7 @@ namespace FinalProjectDatabase
             }
         }
 
+        // EVENT LEAVE PLACEHOLDER PASSWORD
         private void txtPassword_Leave(object sender, EventArgs e)
         {
             if (txtPassword.Text == "")
@@ -126,6 +138,7 @@ namespace FinalProjectDatabase
             }
         }
 
+        // SHOW ICON HIDE AND UNHIDE IN PASSWORD
         private void button1_Click(object sender, EventArgs e)
         {
             if (txtPassword.PasswordChar == '\0')

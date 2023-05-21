@@ -311,5 +311,11 @@ namespace FinalProjectDatabase
         {
 
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            EditOrderHistory edit = new EditOrderHistory();
+            edit.Show();
+        }
     }
     }

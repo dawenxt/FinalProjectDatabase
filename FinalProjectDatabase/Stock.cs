@@ -131,9 +131,10 @@ namespace FinalProjectDatabase
             tbSearch.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tbSearch.Width, tbSearch.Height, 25, 25));
         }
 
+        // Button = Edit Stock Inventory
         private void button5_Click(object sender, EventArgs e)
         {
-            UpdateOrder updateOrder = new UpdateOrder();
+            EditStock updateOrder = new EditStock();
             updateOrder.Show();
         }
 
