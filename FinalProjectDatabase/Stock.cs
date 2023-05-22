@@ -142,5 +142,10 @@ namespace FinalProjectDatabase
         {
 
         }
+
+        private void lblDateNow_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

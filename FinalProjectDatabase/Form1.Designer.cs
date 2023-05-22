@@ -113,7 +113,7 @@
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.DimGray;
+            this.panelLogo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panelLogo.Location = new System.Drawing.Point(27, 39);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(209, 160);

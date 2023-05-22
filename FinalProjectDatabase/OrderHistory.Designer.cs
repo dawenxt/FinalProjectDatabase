@@ -29,34 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderHistory));
-            this.resultId = new System.Windows.Forms.Label();
+            this.resId = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBrgy = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtTime = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtNo = new System.Windows.Forms.TextBox();
-            this.resultName = new System.Windows.Forms.Label();
-            this.resultBrgy = new System.Windows.Forms.Label();
-            this.resultDate = new System.Windows.Forms.Label();
-            this.resultNo = new System.Windows.Forms.Label();
+            this.resProduct = new System.Windows.Forms.Label();
+            this.resQuan = new System.Windows.Forms.Label();
+            this.resTotal = new System.Windows.Forms.Label();
+            this.resStudent = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.resPayment = new System.Windows.Forms.Label();
+            this.resDate = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnBg2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnBg2 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.resOrder = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.pnBgsearch = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -85,14 +77,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgOrderHistory)).BeginInit();
             this.SuspendLayout();
             // 
-            // resultId
+            // resId
             // 
-            this.resultId.AutoSize = true;
-            this.resultId.Location = new System.Drawing.Point(232, 48);
-            this.resultId.Name = "resultId";
-            this.resultId.Size = new System.Drawing.Size(17, 15);
-            this.resultId.TabIndex = 3;
-            this.resultId.Text = "Id";
+            this.resId.AutoSize = true;
+            this.resId.Location = new System.Drawing.Point(184, 41);
+            this.resId.Name = "resId";
+            this.resId.Size = new System.Drawing.Size(17, 15);
+            this.resId.TabIndex = 3;
+            this.resId.Text = "Id";
             // 
             // txtSearch
             // 
@@ -103,220 +95,68 @@
             this.txtSearch.TabIndex = 4;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // txtName
+            // resProduct
             // 
-            this.txtName.Location = new System.Drawing.Point(837, 91);
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(271, 31);
-            this.txtName.TabIndex = 6;
+            this.resProduct.AutoSize = true;
+            this.resProduct.Location = new System.Drawing.Point(184, 117);
+            this.resProduct.Name = "resProduct";
+            this.resProduct.Size = new System.Drawing.Size(62, 15);
+            this.resProduct.TabIndex = 21;
+            this.resProduct.Text = "Product Id";
             // 
-            // label2
+            // resQuan
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(741, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Product Number";
+            this.resQuan.AutoSize = true;
+            this.resQuan.Location = new System.Drawing.Point(184, 142);
+            this.resQuan.Name = "resQuan";
+            this.resQuan.Size = new System.Drawing.Size(53, 15);
+            this.resQuan.TabIndex = 22;
+            this.resQuan.Text = "Quantity";
             // 
-            // txtBrgy
+            // resTotal
             // 
-            this.txtBrgy.Location = new System.Drawing.Point(837, 134);
-            this.txtBrgy.Multiline = true;
-            this.txtBrgy.Name = "txtBrgy";
-            this.txtBrgy.Size = new System.Drawing.Size(271, 31);
-            this.txtBrgy.TabIndex = 8;
+            this.resTotal.AutoSize = true;
+            this.resTotal.Location = new System.Drawing.Point(184, 168);
+            this.resTotal.Name = "resTotal";
+            this.resTotal.Size = new System.Drawing.Size(59, 15);
+            this.resTotal.TabIndex = 23;
+            this.resTotal.Text = "Total Cost";
             // 
-            // label3
+            // resStudent
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(741, 145);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Cost";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(740, 190);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 15);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Date Purchased";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(744, 233);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 35);
-            this.btnAdd.TabIndex = 11;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(837, 233);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(76, 35);
-            this.btnDelete.TabIndex = 12;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(920, 233);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(81, 35);
-            this.btnUpdate.TabIndex = 13;
-            this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(837, 4);
-            this.txtID.Multiline = true;
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(271, 31);
-            this.txtID.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(741, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 15);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Order Number";
-            // 
-            // dtTime
-            // 
-            this.dtTime.Location = new System.Drawing.Point(837, 186);
-            this.dtTime.Name = "dtTime";
-            this.dtTime.Size = new System.Drawing.Size(271, 23);
-            this.dtTime.TabIndex = 16;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(741, 56);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 15);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Student No";
-            // 
-            // txtNo
-            // 
-            this.txtNo.Location = new System.Drawing.Point(837, 50);
-            this.txtNo.Multiline = true;
-            this.txtNo.Name = "txtNo";
-            this.txtNo.Size = new System.Drawing.Size(271, 31);
-            this.txtNo.TabIndex = 20;
-            // 
-            // resultName
-            // 
-            this.resultName.AutoSize = true;
-            this.resultName.Location = new System.Drawing.Point(232, 100);
-            this.resultName.Name = "resultName";
-            this.resultName.Size = new System.Drawing.Size(39, 15);
-            this.resultName.TabIndex = 21;
-            this.resultName.Text = "Name";
-            // 
-            // resultBrgy
-            // 
-            this.resultBrgy.AutoSize = true;
-            this.resultBrgy.Location = new System.Drawing.Point(232, 125);
-            this.resultBrgy.Name = "resultBrgy";
-            this.resultBrgy.Size = new System.Drawing.Size(31, 15);
-            this.resultBrgy.TabIndex = 22;
-            this.resultBrgy.Text = "Brgy";
-            // 
-            // resultDate
-            // 
-            this.resultDate.AutoSize = true;
-            this.resultDate.Location = new System.Drawing.Point(232, 151);
-            this.resultDate.Name = "resultDate";
-            this.resultDate.Size = new System.Drawing.Size(31, 15);
-            this.resultDate.TabIndex = 23;
-            this.resultDate.Text = "Date";
-            // 
-            // resultNo
-            // 
-            this.resultNo.AutoSize = true;
-            this.resultNo.Location = new System.Drawing.Point(232, 74);
-            this.resultNo.Name = "resultNo";
-            this.resultNo.Size = new System.Drawing.Size(64, 15);
-            this.resultNo.TabIndex = 24;
-            this.resultNo.Text = "StudentNo";
+            this.resStudent.AutoSize = true;
+            this.resStudent.Location = new System.Drawing.Point(184, 91);
+            this.resStudent.Name = "resStudent";
+            this.resStudent.Size = new System.Drawing.Size(95, 15);
+            this.resStudent.TabIndex = 24;
+            this.resStudent.Text = "Student Number";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 20);
+            this.label7.Location = new System.Drawing.Point(26, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 15);
             this.label7.TabIndex = 25;
             this.label7.Text = "Search Result:";
             // 
-            // btnExit
+            // resPayment
             // 
-            this.btnExit.Location = new System.Drawing.Point(1033, 233);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 35);
-            this.btnExit.TabIndex = 26;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.resPayment.AutoSize = true;
+            this.resPayment.Location = new System.Drawing.Point(184, 195);
+            this.resPayment.Name = "resPayment";
+            this.resPayment.Size = new System.Drawing.Size(99, 15);
+            this.resPayment.TabIndex = 33;
+            this.resPayment.Text = "Payment Method";
             // 
-            // label9
+            // resDate
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 74);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 15);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "StudentNo:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 151);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 15);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Date:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(26, 125);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 15);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "Brgy:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 100);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 15);
-            this.label12.TabIndex = 31;
-            this.label12.Text = "Name:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(26, 48);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(20, 15);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Id:";
+            this.resDate.AutoSize = true;
+            this.resDate.Location = new System.Drawing.Point(184, 221);
+            this.resDate.Name = "resDate";
+            this.resDate.Size = new System.Drawing.Size(31, 15);
+            this.resDate.TabIndex = 32;
+            this.resDate.Text = "Date";
             // 
             // Column1
             // 
@@ -328,36 +168,109 @@
             // pnBg2
             // 
             this.pnBg2.BackColor = System.Drawing.Color.White;
-            this.pnBg2.Controls.Add(this.btnEdit);
+            this.pnBg2.Controls.Add(this.label1);
+            this.pnBg2.Controls.Add(this.label8);
             this.pnBg2.Controls.Add(this.label9);
-            this.pnBg2.Controls.Add(this.txtID);
             this.pnBg2.Controls.Add(this.label10);
-            this.pnBg2.Controls.Add(this.resultId);
             this.pnBg2.Controls.Add(this.label11);
             this.pnBg2.Controls.Add(this.label12);
-            this.pnBg2.Controls.Add(this.label2);
             this.pnBg2.Controls.Add(this.label13);
-            this.pnBg2.Controls.Add(this.txtName);
-            this.pnBg2.Controls.Add(this.label3);
-            this.pnBg2.Controls.Add(this.txtBrgy);
-            this.pnBg2.Controls.Add(this.btnExit);
-            this.pnBg2.Controls.Add(this.label4);
+            this.pnBg2.Controls.Add(this.label18);
+            this.pnBg2.Controls.Add(this.resOrder);
+            this.pnBg2.Controls.Add(this.btnEdit);
+            this.pnBg2.Controls.Add(this.resPayment);
+            this.pnBg2.Controls.Add(this.resId);
+            this.pnBg2.Controls.Add(this.resDate);
             this.pnBg2.Controls.Add(this.label7);
-            this.pnBg2.Controls.Add(this.btnAdd);
-            this.pnBg2.Controls.Add(this.resultNo);
-            this.pnBg2.Controls.Add(this.btnDelete);
-            this.pnBg2.Controls.Add(this.resultDate);
-            this.pnBg2.Controls.Add(this.btnUpdate);
-            this.pnBg2.Controls.Add(this.resultBrgy);
-            this.pnBg2.Controls.Add(this.label5);
-            this.pnBg2.Controls.Add(this.resultName);
-            this.pnBg2.Controls.Add(this.dtTime);
-            this.pnBg2.Controls.Add(this.txtNo);
-            this.pnBg2.Controls.Add(this.label6);
+            this.pnBg2.Controls.Add(this.resStudent);
+            this.pnBg2.Controls.Add(this.resTotal);
+            this.pnBg2.Controls.Add(this.resQuan);
+            this.pnBg2.Controls.Add(this.resProduct);
             this.pnBg2.Location = new System.Drawing.Point(39, 627);
             this.pnBg2.Name = "pnBg2";
             this.pnBg2.Size = new System.Drawing.Size(1270, 273);
             this.pnBg2.TabIndex = 35;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 15);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Order Number";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(26, 195);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 15);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "Payment Method";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(26, 41);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(17, 15);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Id";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(26, 221);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 15);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Date";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(26, 91);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 15);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Student Number";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(26, 168);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 15);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "Total Cost";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(26, 142);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 15);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Quantity";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(26, 117);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(62, 15);
+            this.label18.TabIndex = 36;
+            this.label18.Text = "Product Id";
+            // 
+            // resOrder
+            // 
+            this.resOrder.AutoSize = true;
+            this.resOrder.Location = new System.Drawing.Point(184, 66);
+            this.resOrder.Name = "resOrder";
+            this.resOrder.Size = new System.Drawing.Size(84, 15);
+            this.resOrder.TabIndex = 34;
+            this.resOrder.Text = "Order Number";
             // 
             // btnEdit
             // 
@@ -458,6 +371,7 @@
             this.lblDateNow.Size = new System.Drawing.Size(31, 15);
             this.lblDateNow.TabIndex = 36;
             this.lblDateNow.Text = "Date";
+            this.lblDateNow.Click += new System.EventHandler(this.lblDateNow_Click);
             // 
             // pnOrder
             // 
@@ -509,6 +423,7 @@
             this.dgOrderHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgOrderHistory.Size = new System.Drawing.Size(1275, 444);
             this.dgOrderHistory.TabIndex = 40;
+            this.dgOrderHistory.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgOrderHistory_CellMouseClick);
             // 
             // Column8
             // 
@@ -590,7 +505,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OrderHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "myList";
+            this.Text = "v";
             this.Load += new System.EventHandler(this.myList_Load);
             this.pnBg2.ResumeLayout(false);
             this.pnBg2.PerformLayout();
@@ -605,32 +520,15 @@
         }
 
         #endregion
-        private Label resultId;
+        private Label resId;
         private TextBox txtSearch;
-        private TextBox txtName;
-        private Label label2;
-        private TextBox txtBrgy;
-        private Label label3;
-        private Label label4;
-        private Button btnAdd;
-        private Button btnDelete;
-        private Button btnUpdate;
-        private TextBox txtID;
-        private Label label5;
-        private DateTimePicker dtTime;
-        private Label label6;
-        private TextBox txtNo;
-        private Label resultName;
-        private Label resultBrgy;
-        private Label resultDate;
-        private Label resultNo;
+        private Label resProduct;
+        private Label resQuan;
+        private Label resTotal;
+        private Label resStudent;
         private Label label7;
-        private Button btnExit;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private Label label12;
-        private Label label13;
+        private Label resPayment;
+        private Label resDate;
         private DataGridViewTextBoxColumn Column1;
         private Panel pnBg2;
         private Button btnEdit;
@@ -655,5 +553,14 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
+        private Label resOrder;
+        private Label label1;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private Label label18;
     }
 }

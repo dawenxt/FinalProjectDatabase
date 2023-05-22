@@ -28,6 +28,7 @@ using System.Text.RegularExpressions;
 
 namespace FinalProjectDatabase
 {
+    
 
     public partial class OrderHistory : Form
     {
@@ -88,10 +89,12 @@ namespace FinalProjectDatabase
 
             // Database Close to run the Program
             conn.Close();
-            
+
+
         }
 
-// Calling the void we set to Run the Database in the main form of Mylist Designer
+
+        // Calling the void we set to Run the Database in the main form of Mylist Designer
         private void myList_Load(object sender, EventArgs e)
         {
             dgLists();
@@ -99,130 +102,10 @@ namespace FinalProjectDatabase
         }
 
 
-// This is for "ADD" new Database (Button ADD)
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            // Using try Catch to lessen bugs
-            try
-            {
-                string studentNo = txtNo.Text;
-                // Need this pattern to insert in Student Number
-                string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-                // Comparing 2 variable if the condition success if the condition not follow the error show.
-                bool isValid = Regex.IsMatch(studentNo, pattern);
-
-                if (isValid)
-                {
-                    string addNew = "INSERT INTO myLists (studentNo,cName,cBrgy,cDate) VALUES (@studentNo,@cName,@cBrgy,@cDate)";
-                    cmd = new OleDbCommand(addNew, conn);
-
-                    cmd.Parameters.AddWithValue("@studentNo", txtNo.Text);
-                    cmd.Parameters.AddWithValue("@cName", txtName.Text);
-                    cmd.Parameters.AddWithValue("@cBrgy", txtBrgy.Text);
-                    cmd.Parameters.AddWithValue("@cDate", dtTime.Value.ToString("yyyy-MM-dd"));
-
-                    try
-                    {
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Success Insert to Database");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
-                    finally
-                    {
-                        conn.Close();
-                        dgLists();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Please enter a valid email address");
-                }
-            }
-            catch (Exception ex)
-            {
-                // Bug Catches
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-
-
-// This is for "UPDATE" new Database (Button UPDATE)
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            string studentNo = txtNo.Text;
-            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-            bool isValid = Regex.IsMatch(studentNo, pattern);
-
-            if (isValid)
-            {
-                string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb";
-                OleDbConnection connection = new OleDbConnection(connectionString);
-
-                string insertQuery = "UPDATE myLists SET studentNo = @studentNo, cName=@cName, cBrgy=@cBrgy, cDate=@cDate WHERE IdNo=@IdNo";
-
-                OleDbCommand cmd = new OleDbCommand(insertQuery, connection);
-                cmd.Parameters.AddWithValue("@studentNo", txtNo.Text);
-                cmd.Parameters.AddWithValue("@cName", txtName.Text);
-                cmd.Parameters.AddWithValue("@cBrgy", txtBrgy.Text);
-                cmd.Parameters.AddWithValue("@cDate", dtTime.Value.ToString("yyyy-MM-dd"));
-                cmd.Parameters.AddWithValue("@IdNo", Convert.ToInt32(txtID.Text)); // set the id of the record to be updated
-                try
-                {
-                    connection.Open();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Success: Email added to database");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                    dgLists();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter a valid email address");
-            }
-        }
-
-// This is for "DELETE" new Database (Button DELETE)
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            string deleteRecord = "DELETE FROM myLists WHERE IdNo=@IdNo";
-            cmd = new OleDbCommand(deleteRecord, conn);
-            cmd.Parameters.AddWithValue("@IdNo", txtID.Text); // set the id of the record to be deleted
-            conn.Open(); // Opening Database
-            cmd.ExecuteNonQuery(); // Read Line 114
-            conn.Close(); // Closing Database
-
-            MessageBox.Show("Success Delete from Database");
-
-            // You need to call the conn void to save in our Database (Line 88)
-            dgLists();
-        }
-
 // Selection the table fill to Update the text Label
         private void dgList_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            // If you select data in DataGrid the data info will display in text Label(txtID,studentNo,txtName,txtBrgy,txtDate)
-            txtID.Text = dgOrderHistory.CurrentRow.Cells[0].Value.ToString();
-            txtNo.Text = dgOrderHistory.CurrentRow.Cells[1].Value.ToString();
-            txtName.Text = dgOrderHistory.CurrentRow.Cells[2].Value.ToString();
-            txtBrgy.Text = dgOrderHistory.CurrentRow.Cells[3].Value.ToString();
-
-            // Converting DataTime with Value
-            DateTime dateValue;
-            if (DateTime.TryParse(dgOrderHistory.CurrentRow.Cells[4].Value.ToString(), out dateValue))
-            {
-                dtTime.Value = dateValue;
-            }
+          
         }
 
 // This is for "EXIT" new Database (Button EXIT)
@@ -247,7 +130,7 @@ namespace FinalProjectDatabase
                 // kapag ikaw ay nag type sa text box with name txt.search
                 string searchTerm = txtSearch.Text;
                 // dito ilalagay or kukunin yung database info (SELECT DATABASE Column and Rows)
-                string query = "SELECT * FROM OrderHistory WHERE IdNo LIKE '%" + searchTerm + "%'";
+                string query = "SELECT * FROM OrderHistory WHERE ID LIKE '%" + searchTerm + "%'";
 
                 using (OleDbConnection connection = new OleDbConnection(connectionString))
                 {
@@ -263,16 +146,19 @@ namespace FinalProjectDatabase
                     {
                         // This Section Print the result in Label (resultId, resultNo, resultName, resultBrgy, resultDate)
                         reader.Read();
-                        resultId.Text = reader["IdNo"].ToString();
-                        resultNo.Text = reader["studentNo"].ToString();
-                        resultName.Text = reader["cName"].ToString();
-                        resultBrgy.Text = reader["cBrgy"].ToString();
-                        resultDate.Text = reader["cDate"].ToString();
+                        resId.Text = reader["ID"].ToString();
+                        resOrder.Text = reader["orderNumber"].ToString();
+                        resStudent.Text = reader["studentNumber"].ToString();
+                        resProduct.Text = reader["productid"].ToString();
+                        resQuan.Text = reader["quantity"].ToString();
+                        resTotal.Text = reader["totalCost"].ToString();
+                        resPayment.Text = reader["paymentMethod"].ToString();
+                        resDate.Text = reader["orderDate"].ToString();
                     }
                     else
                     {
                         // Try searching using student number instead
-                        query = "SELECT * FROM myLists WHERE studentNo LIKE '%" + searchTerm + "%'";
+                        query = "SELECT * FROM OrderHistory WHERE orderNumber LIKE '%" + searchTerm + "%'";
                         command = new OleDbCommand(query, connection);
                         reader = command.ExecuteReader();
 
@@ -280,22 +166,29 @@ namespace FinalProjectDatabase
                         if (reader.HasRows)
                         {
                             reader.Read();
-                            resultId.Text = reader["IdNo"].ToString();
-                            resultNo.Text = reader["studentNo"].ToString();
-                            resultName.Text = reader["cName"].ToString();
-                            resultBrgy.Text = reader["cBrgy"].ToString();
-                            resultDate.Text = reader["cDate"].ToString();
+                           
+                            resOrder.Text = reader["orderNumber"].ToString();
+                            resStudent.Text = reader["studentNumber"].ToString();
+                            resProduct.Text = reader["productid"].ToString();
+                            resQuan.Text = reader["quantity"].ToString();
+                            resTotal.Text = reader["totalCost"].ToString();
+                            resPayment.Text = reader["paymentMethod"].ToString();
+                            resDate.Text = reader["orderDate"].ToString();
+                            resId.Text = reader["ID"].ToString();
                         }
                         else
                         {
                             // This section shows a message box indicating that the data was not found
                             MessageBox.Show("This Data Not Found in Our Database");
                             // Delete the List if the error Appears 
-                            resultId.Text = "";
-                            resultNo.Text = "";
-                            resultName.Text = "";
-                            resultBrgy.Text = "";
-                            resultDate.Text = "";
+                            resId.Text = "";
+                            resOrder.Text = "";
+                            resStudent.Text = "";
+                            resProduct.Text = "";
+                            resQuan.Text = "";
+                            resTotal.Text = "";
+                            resPayment.Text = "";
+                            resDate.Text = "";
                         }
                     }  
                 }
@@ -316,6 +209,22 @@ namespace FinalProjectDatabase
         {
             EditOrderHistory edit = new EditOrderHistory();
             edit.Show();
+        }
+
+        private void dgOrderHistory_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void lblDateNow_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

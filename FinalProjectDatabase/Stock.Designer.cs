@@ -99,6 +99,7 @@
             this.lblDateNow.Size = new System.Drawing.Size(31, 15);
             this.lblDateNow.TabIndex = 3;
             this.lblDateNow.Text = "Date";
+            this.lblDateNow.Click += new System.EventHandler(this.lblDateNow_Click);
             // 
             // lblTimeNow
             // 
