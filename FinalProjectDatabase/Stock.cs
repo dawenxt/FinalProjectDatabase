@@ -64,7 +64,7 @@ namespace FinalProjectDatabase
             table = new DataTable();
 
             // Icoconnect na ang adapter at para mailagay siya sa database using tools
-            adapter = new OleDbDataAdapter("SELECT * FROM OrderHistory", conn);
+            adapter = new OleDbDataAdapter("SELECT * FROM StockInventory", conn);
 
             // Opening the Database
             conn.Open();
@@ -95,6 +95,7 @@ namespace FinalProjectDatabase
             // Set the label text to the current date
             lblDateNow.Text = currentDate.ToString("dddd, MMMM dd, yyyy");
 
+            lblDate.Text = currentDate.ToString("dddd, MMMM dd, yyyy");
             // Get the current time
             DateTime currentTime = DateTime.Now;
 

@@ -53,25 +53,34 @@ namespace FinalProjectDatabase
         // Display name in login label text
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Set up connection string to MS Access database
             string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb";
+            string query = "SELECT TOP 1 username FROM loginAccount"; // Retrieve any username from the loginAccount table
+            string username = null; 
 
-            // Set up SQL query to retrieve username from database
-            string query = "SELECT username FROM loginAccount WHERE ID = ID"; // Replace 1 with the appropriate user ID
-
-            // Set up OleDbConnection and OleDbCommand objects
             using (OleDbConnection connection = new OleDbConnection(connectionString))
-            using (OleDbCommand command = new OleDbCommand(query, connection))
             {
-                // Open the database connection
                 connection.Open();
 
-                // Execute the SQL query and retrieve the username
-                string username = (string)command.ExecuteScalar();
-
-                // Display the username in a label control
-                lblDetails.Text = "Logged in as: " + username;
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    username = command.ExecuteScalar() as string;
+                }
             }
+
+            if (string.IsNullOrEmpty(username))
+            {
+                // Username not found in the database
+                Console.WriteLine("Username not found.");
+            }
+            else
+            {
+                // Username found, display the value
+                lblDetails.Text = "Username: " + username;
+            }
+
+            Console.ReadLine();
+
+
         }
 
         // Bg Rounded corner of All Buttons

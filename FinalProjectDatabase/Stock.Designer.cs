@@ -43,6 +43,9 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnBgsearch = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,6 +54,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pnBg1 = new System.Windows.Forms.Panel();
             this.pnBg2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.orderNum = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -123,7 +129,10 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column7});
+            this.Column7,
+            this.Column9,
+            this.Column10,
+            this.Column11});
             this.dataGridView1.Location = new System.Drawing.Point(43, 108);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -143,58 +152,79 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "orderNumber";
-            this.Column1.HeaderText = "Order Number";
+            this.Column1.DataPropertyName = "ProductNum";
+            this.Column1.HeaderText = "Product Number";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "studentNumber";
-            this.Column2.HeaderText = "Student Number";
+            this.Column2.DataPropertyName = "description";
+            this.Column2.HeaderText = "Description";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "productId";
-            this.Column3.HeaderText = "Product Id";
+            this.Column3.DataPropertyName = "openingStock";
+            this.Column3.HeaderText = "Opening Stock";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "quantity";
-            this.Column4.HeaderText = "Quantity";
+            this.Column4.DataPropertyName = "stockValue";
+            this.Column4.HeaderText = "Stock Value";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "totalCost";
-            this.Column5.HeaderText = "Total Cost";
+            this.Column5.DataPropertyName = "out";
+            this.Column5.HeaderText = "Out";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column6.DataPropertyName = "paymentMethod";
-            this.Column6.HeaderText = "Payment Method";
+            this.Column6.DataPropertyName = "costItem";
+            this.Column6.HeaderText = "Cost Per Item";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column7.DataPropertyName = "orderDate";
-            this.Column7.HeaderText = "Date";
+            this.Column7.DataPropertyName = "sales";
+            this.Column7.HeaderText = "Sales";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "status";
+            this.Column9.HeaderText = "Status";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "storageNumber";
+            this.Column10.HeaderText = "Storage No.";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "reorder";
+            this.Column11.HeaderText = "Reorder";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
             // 
             // pnBgsearch
             // 
@@ -207,7 +237,7 @@
             this.pnBgsearch.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.pnBgsearch.Location = new System.Drawing.Point(43, 568);
             this.pnBgsearch.Name = "pnBgsearch";
-            this.pnBgsearch.Size = new System.Drawing.Size(1272, 47);
+            this.pnBgsearch.Size = new System.Drawing.Size(1275, 47);
             this.pnBgsearch.TabIndex = 1;
             this.pnBgsearch.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBgsearch_Paint);
             // 
@@ -272,12 +302,45 @@
             // pnBg2
             // 
             this.pnBg2.BackColor = System.Drawing.Color.White;
+            this.pnBg2.Controls.Add(this.label5);
+            this.pnBg2.Controls.Add(this.lblDate);
+            this.pnBg2.Controls.Add(this.orderNum);
             this.pnBg2.Controls.Add(this.button5);
             this.pnBg2.Location = new System.Drawing.Point(3, 3);
             this.pnBg2.Name = "pnBg2";
             this.pnBg2.Size = new System.Drawing.Size(1270, 250);
             this.pnBg2.TabIndex = 7;
             this.pnBg2.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBg2_Paint);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(12, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 20);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "Product Number";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDate.Location = new System.Drawing.Point(559, 10);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(41, 20);
+            this.lblDate.TabIndex = 36;
+            this.lblDate.Text = "Date";
+            // 
+            // orderNum
+            // 
+            this.orderNum.AutoSize = true;
+            this.orderNum.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.orderNum.Location = new System.Drawing.Point(475, 10);
+            this.orderNum.Name = "orderNum";
+            this.orderNum.Size = new System.Drawing.Size(82, 20);
+            this.orderNum.TabIndex = 35;
+            this.orderNum.Text = "Stock as of";
             // 
             // button5
             // 
@@ -332,6 +395,7 @@
             this.pnBgsearch.PerformLayout();
             this.pnBg1.ResumeLayout(false);
             this.pnBg2.ResumeLayout(false);
+            this.pnBg2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,5 +428,11 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Column11;
+        private Label lblDate;
+        private Label orderNum;
+        private Label label5;
     }
 }

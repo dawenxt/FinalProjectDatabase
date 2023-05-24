@@ -40,25 +40,32 @@ namespace FinalProjectDatabase
         // Login using Database | Getting the username and password in Database List
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb";
-            string query = "SELECT COUNT(*) FROM loginAccount WHERE Username = @username AND Password = @password";
-            using (OleDbConnection connection = new OleDbConnection(connectionString))
-            using (OleDbCommand command = new OleDbCommand(query, connection))
+            try
             {
-                command.Parameters.AddWithValue("@username", txtUsername.Text);
-                command.Parameters.AddWithValue("@password", txtPassword.Text);
-                connection.Open();
-                int result = (int)command.ExecuteScalar();
-                if (result > 0)
+                string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb";
+                string query = "SELECT COUNT(*) FROM loginAccount WHERE Username = @username AND Password = @password";
+                using (OleDbConnection connection = new OleDbConnection(connectionString))
+                using (OleDbCommand command = new OleDbCommand(query, connection))
                 {
-                    Form1 form1 = new Form1();
-                    form1.Show();
-                    this.Hide();
+                    command.Parameters.AddWithValue("@username", txtUsername.Text);
+                    command.Parameters.AddWithValue("@password", txtPassword.Text);
+                    connection.Open();
+                    int result = (int)command.ExecuteScalar();
+                    if (result > 0)
+                    {
+                        Form1 form1 = new Form1();
+                        form1.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        lblError.Text = "Invalid Username or Password";
+                    }
                 }
-                else
-                {
-                    lblError.Text = "Invalid Username or Password";
-                }
+            }
+            catch
+            {
+                lblError.Text = "Error In Database";
             }
         }
 

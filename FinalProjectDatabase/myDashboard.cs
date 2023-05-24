@@ -36,14 +36,6 @@ namespace FinalProjectDatabase
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            panel1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 25, 25));
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 25, 25));
-        }
+       
     }
 }

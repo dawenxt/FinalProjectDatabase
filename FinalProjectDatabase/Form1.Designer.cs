@@ -233,7 +233,7 @@
             // 
             this.lblDetails.AutoSize = true;
             this.lblDetails.Font = new System.Drawing.Font("Lexend Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDetails.Location = new System.Drawing.Point(92, 797);
+            this.lblDetails.Location = new System.Drawing.Point(2, 878);
             this.lblDetails.Name = "lblDetails";
             this.lblDetails.Size = new System.Drawing.Size(70, 21);
             this.lblDetails.TabIndex = 16;

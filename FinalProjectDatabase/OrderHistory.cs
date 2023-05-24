@@ -28,7 +28,6 @@ using System.Text.RegularExpressions;
 
 namespace FinalProjectDatabase
 {
-    
 
     public partial class OrderHistory : Form
     {
@@ -99,10 +98,29 @@ namespace FinalProjectDatabase
         {
             dgLists();
 
+            // Set up connection string to MS Access database
+            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb";
+
+            // Set up SQL query to retrieve username from database
+            string query = "SELECT username FROM loginAccount WHERE ID = ID"; // Replace 1 with the appropriate user ID
+
+            // Set up OleDbConnection and OleDbCommand objects
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            using (OleDbCommand command = new OleDbCommand(query, connection))
+            {
+                // Open the database connection
+                connection.Open();
+
+                // Execute the SQL query and retrieve the username
+                string username = (string)command.ExecuteScalar();
+
+                // Display the username in a label control
+                lblProcess.Text = username;
+            }
         }
 
 
-// Selection the table fill to Update the text Label
+        // Selection the table fill to Update the text Label
         private void dgList_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
           
@@ -130,7 +148,7 @@ namespace FinalProjectDatabase
                 // kapag ikaw ay nag type sa text box with name txt.search
                 string searchTerm = txtSearch.Text;
                 // dito ilalagay or kukunin yung database info (SELECT DATABASE Column and Rows)
-                string query = "SELECT * FROM OrderHistory WHERE ID LIKE '%" + searchTerm + "%'";
+                string query = "SELECT * FROM OrderHistory WHERE orderNumber LIKE '%" + searchTerm + "%'";
 
                 using (OleDbConnection connection = new OleDbConnection(connectionString))
                 {
@@ -154,43 +172,26 @@ namespace FinalProjectDatabase
                         resTotal.Text = reader["totalCost"].ToString();
                         resPayment.Text = reader["paymentMethod"].ToString();
                         resDate.Text = reader["orderDate"].ToString();
+
                     }
                     else
                     {
-                        // Try searching using student number instead
-                        query = "SELECT * FROM OrderHistory WHERE orderNumber LIKE '%" + searchTerm + "%'";
-                        command = new OleDbCommand(query, connection);
-                        reader = command.ExecuteReader();
-
-                        // 2nd Condition
-                        if (reader.HasRows)
-                        {
-                            reader.Read();
-                           
-                            resOrder.Text = reader["orderNumber"].ToString();
-                            resStudent.Text = reader["studentNumber"].ToString();
-                            resProduct.Text = reader["productid"].ToString();
-                            resQuan.Text = reader["quantity"].ToString();
-                            resTotal.Text = reader["totalCost"].ToString();
-                            resPayment.Text = reader["paymentMethod"].ToString();
-                            resDate.Text = reader["orderDate"].ToString();
-                            resId.Text = reader["ID"].ToString();
-                        }
-                        else
-                        {
-                            // This section shows a message box indicating that the data was not found
-                            MessageBox.Show("This Data Not Found in Our Database");
-                            // Delete the List if the error Appears 
-                            resId.Text = "";
-                            resOrder.Text = "";
-                            resStudent.Text = "";
-                            resProduct.Text = "";
-                            resQuan.Text = "";
-                            resTotal.Text = "";
-                            resPayment.Text = "";
-                            resDate.Text = "";
-                        }
+                        // This section shows a message box indicating that the data was not found
+                        MessageBox.Show("This Data Not Found in Our Database");
+                        // Delete the List if the error Appears 
+                        resId.Text = "";
+                        resOrder.Text = "";
+                        resStudent.Text = "";
+                        resProduct.Text = "";
+                        resQuan.Text = "";
+                        resTotal.Text = "";
+                        resPayment.Text = "";
+                        resDate.Text = "";
                     }  
+
+                  
+
+
                 }
             }
             catch
@@ -226,5 +227,17 @@ namespace FinalProjectDatabase
         {
 
         }
+
+        // Rounded Corner
+        private void pnOrder_Paint(object sender, PaintEventArgs e)
+        {
+            pnOrder.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnOrder.Width, pnOrder.Height, 25, 25));
+        }
+
+        // Rounded Corner
+        private void pnBgsearch_Paint(object sender, PaintEventArgs e)
+        {
+            pnBgsearch.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnBgsearch.Width, pnBgsearch.Height, 25, 25));
+        }
     }
-    }
+}

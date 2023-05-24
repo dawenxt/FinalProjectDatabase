@@ -143,7 +143,7 @@ namespace FinalProjectDatabase
                     cmd.Parameters.AddWithValue("@totalCost", addTotal.Text);
                     cmd.Parameters.AddWithValue("@paymentMethod", addPayment.Text);
                     cmd.Parameters.AddWithValue("@orderDate", dtTime.Value.ToString("yyyy-MM-dd"));
-                    cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(tbID.Text)); // set the id of the record to be updated
+                    cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(lblID.Text)); // set the id of the record to be updated
                 try
                     {
                         connection.Open();
@@ -173,7 +173,7 @@ namespace FinalProjectDatabase
         {
             string deleteRecord = "DELETE FROM OrderHistory WHERE ID=@ID";
             cmd = new OleDbCommand(deleteRecord, conn);
-            cmd.Parameters.AddWithValue("@ID", tbID.Text); // set the id of the record to be deleted
+            cmd.Parameters.AddWithValue("@ID", lblID.Text); // set the id of the record to be deleted
             conn.Open(); // Opening Database
             cmd.ExecuteNonQuery(); // Read Line 114
             conn.Close(); // Closing Database
@@ -187,7 +187,8 @@ namespace FinalProjectDatabase
         // This Function Select the row in DatagridView
         private void dgOrderHistory_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            tbID.Text = dgOrderHistory.CurrentRow.Cells[0].Value.ToString();
+            lblShow.Text = "";
+            lblID.Text = dgOrderHistory.CurrentRow.Cells[0].Value.ToString();
             addOrder.Text = dgOrderHistory.CurrentRow.Cells[1].Value.ToString();
             addStudent.Text = dgOrderHistory.CurrentRow.Cells[2].Value.ToString();
             addProduct.Text = dgOrderHistory.CurrentRow.Cells[3].Value.ToString();
@@ -204,7 +205,8 @@ namespace FinalProjectDatabase
         // Clear all input select in rows that display in textbox
         private void btnClear_Click(object sender, EventArgs e)
         {
-            tbID.Text = "";
+            lblShow.Text = "Fill up new in Form";
+            lblID.Text = "";
             addOrder.Text = "";
             addStudent.Text = "";
             addProduct.Text = "";

@@ -35,11 +35,14 @@
             this.resQuan = new System.Windows.Forms.Label();
             this.resTotal = new System.Windows.Forms.Label();
             this.resStudent = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.resPayment = new System.Windows.Forms.Label();
             this.resDate = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnBg2 = new System.Windows.Forms.Panel();
+            this.resName = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblProcess = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -80,14 +83,16 @@
             // resId
             // 
             this.resId.AutoSize = true;
-            this.resId.Location = new System.Drawing.Point(184, 41);
+            this.resId.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.resId.Location = new System.Drawing.Point(209, 57);
             this.resId.Name = "resId";
-            this.resId.Size = new System.Drawing.Size(17, 15);
+            this.resId.Size = new System.Drawing.Size(22, 20);
             this.resId.TabIndex = 3;
             this.resId.Text = "Id";
             // 
             // txtSearch
             // 
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSearch.Location = new System.Drawing.Point(77, 9);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
@@ -98,63 +103,60 @@
             // resProduct
             // 
             this.resProduct.AutoSize = true;
-            this.resProduct.Location = new System.Drawing.Point(184, 117);
+            this.resProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.resProduct.Location = new System.Drawing.Point(207, 145);
             this.resProduct.Name = "resProduct";
-            this.resProduct.Size = new System.Drawing.Size(62, 15);
+            this.resProduct.Size = new System.Drawing.Size(80, 20);
             this.resProduct.TabIndex = 21;
             this.resProduct.Text = "Product Id";
             // 
             // resQuan
             // 
             this.resQuan.AutoSize = true;
-            this.resQuan.Location = new System.Drawing.Point(184, 142);
+            this.resQuan.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.resQuan.Location = new System.Drawing.Point(207, 114);
             this.resQuan.Name = "resQuan";
-            this.resQuan.Size = new System.Drawing.Size(53, 15);
+            this.resQuan.Size = new System.Drawing.Size(68, 20);
             this.resQuan.TabIndex = 22;
             this.resQuan.Text = "Quantity";
             // 
             // resTotal
             // 
             this.resTotal.AutoSize = true;
-            this.resTotal.Location = new System.Drawing.Point(184, 168);
+            this.resTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.resTotal.Location = new System.Drawing.Point(207, 177);
             this.resTotal.Name = "resTotal";
-            this.resTotal.Size = new System.Drawing.Size(59, 15);
+            this.resTotal.Size = new System.Drawing.Size(75, 20);
             this.resTotal.TabIndex = 23;
             this.resTotal.Text = "Total Cost";
             // 
             // resStudent
             // 
             this.resStudent.AutoSize = true;
-            this.resStudent.Location = new System.Drawing.Point(184, 91);
+            this.resStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.resStudent.Location = new System.Drawing.Point(208, 84);
             this.resStudent.Name = "resStudent";
-            this.resStudent.Size = new System.Drawing.Size(95, 15);
+            this.resStudent.Size = new System.Drawing.Size(123, 20);
             this.resStudent.TabIndex = 24;
             this.resStudent.Text = "Student Number";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 15);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 15);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Search Result:";
             // 
             // resPayment
             // 
             this.resPayment.AutoSize = true;
-            this.resPayment.Location = new System.Drawing.Point(184, 195);
+            this.resPayment.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.resPayment.Location = new System.Drawing.Point(207, 208);
             this.resPayment.Name = "resPayment";
-            this.resPayment.Size = new System.Drawing.Size(99, 15);
+            this.resPayment.Size = new System.Drawing.Size(127, 20);
             this.resPayment.TabIndex = 33;
             this.resPayment.Text = "Payment Method";
             // 
             // resDate
             // 
             this.resDate.AutoSize = true;
-            this.resDate.Location = new System.Drawing.Point(184, 221);
+            this.resDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.resDate.Location = new System.Drawing.Point(991, 59);
             this.resDate.Name = "resDate";
-            this.resDate.Size = new System.Drawing.Size(31, 15);
+            this.resDate.Size = new System.Drawing.Size(41, 20);
             this.resDate.TabIndex = 32;
             this.resDate.Text = "Date";
             // 
@@ -167,7 +169,11 @@
             // 
             // pnBg2
             // 
-            this.pnBg2.BackColor = System.Drawing.Color.White;
+            this.pnBg2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnBg2.Controls.Add(this.resName);
+            this.pnBg2.Controls.Add(this.label3);
+            this.pnBg2.Controls.Add(this.lblProcess);
+            this.pnBg2.Controls.Add(this.label2);
             this.pnBg2.Controls.Add(this.label1);
             this.pnBg2.Controls.Add(this.label8);
             this.pnBg2.Controls.Add(this.label9);
@@ -181,101 +187,149 @@
             this.pnBg2.Controls.Add(this.resPayment);
             this.pnBg2.Controls.Add(this.resId);
             this.pnBg2.Controls.Add(this.resDate);
-            this.pnBg2.Controls.Add(this.label7);
             this.pnBg2.Controls.Add(this.resStudent);
             this.pnBg2.Controls.Add(this.resTotal);
             this.pnBg2.Controls.Add(this.resQuan);
             this.pnBg2.Controls.Add(this.resProduct);
-            this.pnBg2.Location = new System.Drawing.Point(39, 627);
+            this.pnBg2.Location = new System.Drawing.Point(39, 537);
             this.pnBg2.Name = "pnBg2";
-            this.pnBg2.Size = new System.Drawing.Size(1270, 273);
+            this.pnBg2.Size = new System.Drawing.Size(1270, 312);
             this.pnBg2.TabIndex = 35;
+            // 
+            // resName
+            // 
+            this.resName.AutoSize = true;
+            this.resName.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.resName.Location = new System.Drawing.Point(954, 101);
+            this.resName.Name = "resName";
+            this.resName.Size = new System.Drawing.Size(115, 20);
+            this.resName.TabIndex = 46;
+            this.resName.Text = "Student Name :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(833, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 20);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "Student Name :";
+            // 
+            // lblProcess
+            // 
+            this.lblProcess.AutoSize = true;
+            this.lblProcess.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblProcess.Location = new System.Drawing.Point(207, 240);
+            this.lblProcess.Name = "lblProcess";
+            this.lblProcess.Size = new System.Drawing.Size(54, 20);
+            this.lblProcess.TabIndex = 44;
+            this.lblProcess.Text = "Admin";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(49, 240);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 20);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Processed by :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 66);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(540, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 15);
+            this.label1.Size = new System.Drawing.Size(62, 20);
             this.label1.TabIndex = 42;
-            this.label1.Text = "Order Number";
+            this.label1.Text = "Order #";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 195);
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(49, 208);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 15);
+            this.label8.Size = new System.Drawing.Size(135, 20);
             this.label8.TabIndex = 41;
-            this.label8.Text = "Payment Method";
+            this.label8.Text = "Payment Method :";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 41);
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(49, 59);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(17, 15);
+            this.label9.Size = new System.Drawing.Size(22, 20);
             this.label9.TabIndex = 35;
             this.label9.Text = "Id";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 221);
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(833, 59);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 15);
+            this.label10.Size = new System.Drawing.Size(41, 20);
             this.label10.TabIndex = 40;
             this.label10.Text = "Date";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(26, 91);
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(49, 84);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 15);
+            this.label11.Size = new System.Drawing.Size(131, 20);
             this.label11.TabIndex = 39;
-            this.label11.Text = "Student Number";
+            this.label11.Text = "Student Number :";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 168);
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(49, 176);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 15);
+            this.label12.Size = new System.Drawing.Size(83, 20);
             this.label12.TabIndex = 38;
-            this.label12.Text = "Total Cost";
+            this.label12.Text = "Total Cost :";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(26, 142);
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(49, 113);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 15);
+            this.label13.Size = new System.Drawing.Size(142, 20);
             this.label13.TabIndex = 37;
-            this.label13.Text = "Quantity";
+            this.label13.Text = "Number of Orders :";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(26, 117);
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(49, 145);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(62, 15);
+            this.label18.Size = new System.Drawing.Size(144, 20);
             this.label18.TabIndex = 36;
-            this.label18.Text = "Product Id";
+            this.label18.Text = "Product Number/s :";
             // 
             // resOrder
             // 
             this.resOrder.AutoSize = true;
-            this.resOrder.Location = new System.Drawing.Point(184, 66);
+            this.resOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.resOrder.Location = new System.Drawing.Point(599, 10);
             this.resOrder.Name = "resOrder";
-            this.resOrder.Size = new System.Drawing.Size(84, 15);
+            this.resOrder.Size = new System.Drawing.Size(110, 20);
             this.resOrder.TabIndex = 34;
             this.resOrder.Text = "Order Number";
             // 
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.Location = new System.Drawing.Point(1153, 196);
+            this.btnEdit.Location = new System.Drawing.Point(1167, 262);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(88, 34);
             this.btnEdit.TabIndex = 5;
@@ -292,10 +346,11 @@
             this.pnBgsearch.Controls.Add(this.label14);
             this.pnBgsearch.Controls.Add(this.txtSearch);
             this.pnBgsearch.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.pnBgsearch.Location = new System.Drawing.Point(39, 560);
+            this.pnBgsearch.Location = new System.Drawing.Point(39, 470);
             this.pnBgsearch.Name = "pnBgsearch";
             this.pnBgsearch.Size = new System.Drawing.Size(1272, 47);
             this.pnBgsearch.TabIndex = 36;
+            this.pnBgsearch.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBgsearch_Paint);
             // 
             // button3
             // 
@@ -382,6 +437,7 @@
             this.pnOrder.Name = "pnOrder";
             this.pnOrder.Size = new System.Drawing.Size(1046, 47);
             this.pnOrder.TabIndex = 35;
+            this.pnOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.pnOrder_Paint);
             // 
             // button4
             // 
@@ -421,7 +477,7 @@
             this.dgOrderHistory.ReadOnly = true;
             this.dgOrderHistory.RowTemplate.Height = 25;
             this.dgOrderHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgOrderHistory.Size = new System.Drawing.Size(1275, 444);
+            this.dgOrderHistory.Size = new System.Drawing.Size(1275, 341);
             this.dgOrderHistory.TabIndex = 40;
             this.dgOrderHistory.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgOrderHistory_CellMouseClick);
             // 
@@ -526,7 +582,6 @@
         private Label resQuan;
         private Label resTotal;
         private Label resStudent;
-        private Label label7;
         private Label resPayment;
         private Label resDate;
         private DataGridViewTextBoxColumn Column1;
@@ -562,5 +617,9 @@
         private Label label12;
         private Label label13;
         private Label label18;
+        private Label label2;
+        private Label lblProcess;
+        private Label resName;
+        private Label label3;
     }
 }
