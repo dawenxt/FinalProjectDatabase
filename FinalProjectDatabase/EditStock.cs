@@ -48,12 +48,52 @@ namespace FinalProjectDatabase
 
         private void UpdateOrder_Load(object sender, EventArgs e)
         {
+            dgLists();
 
+            // Get the current date
+            DateTime currentDate = DateTime.Now;
+
+            // Set the label text to the current date
+            lblDate.Text = currentDate.ToString("dddd, MMMM dd, yyyy");
+
+            // Get the current time
+            DateTime currentTime = DateTime.Now;
+
+            // Set up connection string to MS Access database
+            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb";
+
+            // Set up SQL query to retrieve username from database
+            string query = "SELECT username FROM loginAccount WHERE ID = ID"; // Replace 1 with the appropriate user ID
+
+            // Set up OleDbConnection and OleDbCommand objects
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            using (OleDbCommand command = new OleDbCommand(query, connection))
+            {
+                // Open the database connection
+                connection.Open();
+
+                // Execute the SQL query and retrieve the username
+                string username = (string)command.ExecuteScalar();
+
+                // Display the username in a label control
+                lblAdmin.Text = username;
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            this.Close();
+            lblFill.Text = "Fill Up new in Form";
+            lblID.Text = "";
+            lblProduct.Text = "";
+            lblDescription.Text = "";
+            txtOpening.Text = "";
+            txtStock.Text = "";
+            txtOut.Text = "";
+            txtCost.Text = "";
+            txtSales.Text = "";
+            txtStatus.Text = "";
+            txtStorage.Text = "";
+            txtReorder.Text = "";
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -72,18 +112,18 @@ namespace FinalProjectDatabase
         // This is a column and rows in our database and inserting in our Forms ( Database access to Windows Form )
         DataTable table;
 
+        // DATABASE
         void dgLists()
         {
-            // File Path of Database and to test Data (Go to Server Explorer right click Data Connections (Add New Connection))
-            // then select data source Microsoft Access Database File (OLE DB) then paste your Database Access File Name Location
-            // next is click advance and copy the Provider at the bottom.
+            // ...
+
             conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb");
 
             // And yung database file na nasa folder is babasahin nya yung name na myLists sa access database at magcreate siya ng table
             table = new DataTable();
 
             // Icoconnect na ang adapter at para mailagay siya sa database using tools
-            adapter = new OleDbDataAdapter("SELECT * FROM OrderHistory", conn);
+            adapter = new OleDbDataAdapter("SELECT * FROM StockInventory", conn);
 
             // Opening the Database
             conn.Open();
@@ -91,34 +131,39 @@ namespace FinalProjectDatabase
             // Dito ireread niya yung column at rows sa database and ififill nya ito sa datagridview
             adapter.Fill(table);
 
+            // Ilalagay na niya sa table at yung mismong database information gamit itong method name dgLists
+            dgList.DataSource = table;
+
             // Database Close to run the Program
             conn.Close();
 
+            // ...
         }
-        // DATABASE
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        
+
+
+        // Button Save
+        private void btnSave_Click(object sender, EventArgs e)
         {
             // Using try Catch to lessen bugs
             try
-            {
-                string studentNo = txtNo.Text;
-                // Need this pattern to insert in Student Number
-                string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-                // Comparing 2 variable if the condition success if the condition not follow the error show.
-                bool isValid = Regex.IsMatch(studentNo, pattern);
-
-                if (isValid)
-                {
-                    string addNew = "INSERT INTO myLists (studentNo,cName,cBrgy,cDate) VALUES (@studentNo,@cName,@cBrgy,@cDate)";
+            {          
+                    string addNew = "INSERT INTO StockInventory (productNum,description,openingStock,stockValue,out,costItem,sales,status,storageNumber,reorder) VALUES (@productNum,@description,@openingStock,@stockValue,@out,@costItem,@sales,@status,@storageNumber,@reorder)";
                     cmd = new OleDbCommand(addNew, conn);
 
-                    cmd.Parameters.AddWithValue("@studentNo", txtNo.Text);
-                    cmd.Parameters.AddWithValue("@cName", txtName.Text);
-                    cmd.Parameters.AddWithValue("@cBrgy", txtBrgy.Text);
-                   
+                    cmd.Parameters.AddWithValue("@productNum", lblProduct.Text);
+                    cmd.Parameters.AddWithValue("@description", lblDescription.Text);
+                    cmd.Parameters.AddWithValue("@openingStock", txtOpening.Text);
+                    cmd.Parameters.AddWithValue("@stockValue", txtStock.Text);
+                    cmd.Parameters.AddWithValue("@out", txtOut.Text);
+                    cmd.Parameters.AddWithValue("@costItem", txtCost.Text);
+                    cmd.Parameters.AddWithValue("@sales", txtSales.Text);
+                    cmd.Parameters.AddWithValue("@status", txtStatus.Text);
+                    cmd.Parameters.AddWithValue("@storageNumber", txtStorage.Text);
+                    cmd.Parameters.AddWithValue("@reorder", txtReorder.Text);
 
-                    try
+                try
                     {
                         conn.Open();
                         cmd.ExecuteNonQuery();
@@ -132,12 +177,7 @@ namespace FinalProjectDatabase
                     {
                         conn.Close();
                         dgLists();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Please enter a valid email address");
-                }
+                    }       
             }
             catch (Exception ex)
             {
@@ -145,6 +185,84 @@ namespace FinalProjectDatabase
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        // Button Update
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+          
+            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb";
+            OleDbConnection connection = new OleDbConnection(connectionString);
+
+            string insertQuery = "UPDATE StockInventory SET productNum = @productNum, description=@description, openingStock=@openingStock, stockValue=@stockValue, out=@out, costItem=@costItem, sales = @sales, status = @status, storagenumber = @storageNumber, reorder = @reorder WHERE ID=@ID";
+
+            OleDbCommand cmd = new OleDbCommand(insertQuery, connection);
+
+            cmd.Parameters.AddWithValue("@productNum", lblProduct.Text);
+            cmd.Parameters.AddWithValue("@description", lblDescription.Text);
+            cmd.Parameters.AddWithValue("@openingStock", txtOpening.Text);
+            cmd.Parameters.AddWithValue("@stockValue", txtStock.Text);
+            cmd.Parameters.AddWithValue("@out", txtOut.Text);
+            cmd.Parameters.AddWithValue("@costItem", txtCost.Text);
+            cmd.Parameters.AddWithValue("@sales", txtSales.Text);
+            cmd.Parameters.AddWithValue("@status", txtStatus.Text);
+            cmd.Parameters.AddWithValue("@storageNumber", txtStorage.Text);
+            cmd.Parameters.AddWithValue("@reorder", txtReorder.Text);
+            cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(lblID.Text)); // set the id of the record to be updated
+            try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+
+                }
+                dgLists();
+            }
+
+
+        // Select in DATAGRID
+        private void dgList_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            lblID.Text = dgList.CurrentRow.Cells[0].Value.ToString();
+            lblProduct.Text = dgList.CurrentRow.Cells[1].Value.ToString();
+            lblDescription.Text = dgList.CurrentRow.Cells[2].Value.ToString();
+            txtOpening.Text = dgList.CurrentRow.Cells[3].Value.ToString();
+            txtStock.Text = dgList.CurrentRow.Cells[4].Value.ToString();
+            txtOut.Text = dgList.CurrentRow.Cells[5].Value.ToString();
+            txtCost.Text = dgList.CurrentRow.Cells[6].Value.ToString();
+            txtSales.Text = dgList.CurrentRow.Cells[7].Value.ToString();
+            txtStatus.Text = dgList.CurrentRow.Cells[8].Value.ToString();
+            txtStorage.Text = dgList.CurrentRow.Cells[9].Value.ToString();
+            txtReorder.Text = dgList.CurrentRow.Cells[10].Value.ToString();
+        }
+
+        // Button = Delete
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            string deleteRecord = "DELETE FROM StockInventory WHERE ID=@ID";
+            cmd = new OleDbCommand(deleteRecord, conn);
+            cmd.Parameters.AddWithValue("@ID", lblID.Text); // set the id of the record to be deleted
+            conn.Open(); // Opening Database
+            cmd.ExecuteNonQuery(); // Read Line 114
+            conn.Close(); // Closing Database
+
+            MessageBox.Show("Success Delete from Database");
+
+            // You need to call the conn void to save in our Database (Line 88)
+            dgLists();
+        }
     }
 }
+
 

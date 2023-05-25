@@ -127,9 +127,68 @@ namespace FinalProjectDatabase
             pnBg2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnBg2.Width, pnBg2.Height, 25, 25));
         }
 
+        // Button Search
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            tbSearch.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tbSearch.Width, tbSearch.Height, 25, 25));
+            try
+            {
+                // creating new variable name to call the Database Access file Location to exist in current context
+                string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DataFile_InventorySystemITEC103.accdb";
+                // kapag ikaw ay nag type sa text box with name txt.search
+                string searchTerm = tbSearch.Text;
+                // dito ilalagay or kukunin yung database info (SELECT DATABASE Column and Rows)
+                string query = "SELECT * FROM StockInventory WHERE productNum LIKE '%" + searchTerm + "%'";
+
+                using (OleDbConnection connection = new OleDbConnection(connectionString))
+                {
+                    // First is select database info and second is to direct save in our database ( variable name query is "SELECT" and variable name connection is the file path to "SAVE" data )
+                    OleDbCommand command = new OleDbCommand(query, connection);
+                    // Opening Database File
+                    connection.Open();
+                    // Open Database Reader
+                    OleDbDataReader reader = command.ExecuteReader();
+
+                    // 1st Condition
+                    if (reader.HasRows)
+                    {
+                        // This Section Print the result in Label (resultId, resultNo, resultName, resultBrgy, resultDate)
+                        reader.Read();
+                        lblid.Text = reader["ID"].ToString();
+                        lblproduct.Text = reader["productNum"].ToString();
+                        lblDes.Text = reader["description"].ToString();
+                        lblStock.Text = reader["openingStock"].ToString();
+                        lblValue.Text = reader["stockValue"].ToString();
+                        lblOut.Text = reader["out"].ToString();
+                        lblSales.Text = reader["sales"].ToString();
+                        lblOn.Text = reader["status"].ToString();
+                        lblStorage.Text = reader["storageNumber"].ToString();
+                        lblReorder.Text = reader["reorder"].ToString();
+
+                    }
+                    else
+                    {
+                        // This section shows a message box indicating that the data was not found
+                        MessageBox.Show("This Data Not Found in Our Database");
+                        // Delete the List if the error Appears 
+                        lblid.Text = "";
+                        lblproduct.Text = "";
+                        lblDes.Text = "";
+                        lblStock.Text = "";
+                        lblValue.Text = "";
+                        lblOut.Text = "";
+                        lblSales.Text = "";
+                        lblStorage.Text = "";
+                        lblOn.Text = "";
+                        lblReorder.Text = "";
+                    }
+                }
+            }
+            catch
+            {
+                // If the error is not out of bound
+                MessageBox.Show("This is Error in our Database, Sorry!");
+            }
+
         }
 
         // Button = Edit Stock Inventory

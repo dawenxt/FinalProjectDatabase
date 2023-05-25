@@ -54,6 +54,28 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pnBg1 = new System.Windows.Forms.Panel();
             this.pnBg2 = new System.Windows.Forms.Panel();
+            this.Status = new System.Windows.Forms.Label();
+            this.lblOn = new System.Windows.Forms.Label();
+            this.lblid = new System.Windows.Forms.Label();
+            this.lblNext = new System.Windows.Forms.Label();
+            this.lblReorder = new System.Windows.Forms.Label();
+            this.lblLast = new System.Windows.Forms.Label();
+            this.lblStorage = new System.Windows.Forms.Label();
+            this.lblSales = new System.Windows.Forms.Label();
+            this.lblOut = new System.Windows.Forms.Label();
+            this.lblValue = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
+            this.lblDes = new System.Windows.Forms.Label();
+            this.lblproduct = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.orderNum = new System.Windows.Forms.Label();
@@ -302,6 +324,28 @@
             // pnBg2
             // 
             this.pnBg2.BackColor = System.Drawing.Color.White;
+            this.pnBg2.Controls.Add(this.Status);
+            this.pnBg2.Controls.Add(this.lblOn);
+            this.pnBg2.Controls.Add(this.lblid);
+            this.pnBg2.Controls.Add(this.lblNext);
+            this.pnBg2.Controls.Add(this.lblReorder);
+            this.pnBg2.Controls.Add(this.lblLast);
+            this.pnBg2.Controls.Add(this.lblStorage);
+            this.pnBg2.Controls.Add(this.lblSales);
+            this.pnBg2.Controls.Add(this.lblOut);
+            this.pnBg2.Controls.Add(this.lblValue);
+            this.pnBg2.Controls.Add(this.lblStock);
+            this.pnBg2.Controls.Add(this.lblDes);
+            this.pnBg2.Controls.Add(this.lblproduct);
+            this.pnBg2.Controls.Add(this.label14);
+            this.pnBg2.Controls.Add(this.label13);
+            this.pnBg2.Controls.Add(this.label12);
+            this.pnBg2.Controls.Add(this.label11);
+            this.pnBg2.Controls.Add(this.label10);
+            this.pnBg2.Controls.Add(this.label9);
+            this.pnBg2.Controls.Add(this.label8);
+            this.pnBg2.Controls.Add(this.label7);
+            this.pnBg2.Controls.Add(this.label6);
             this.pnBg2.Controls.Add(this.label5);
             this.pnBg2.Controls.Add(this.lblDate);
             this.pnBg2.Controls.Add(this.orderNum);
@@ -312,11 +356,231 @@
             this.pnBg2.TabIndex = 7;
             this.pnBg2.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBg2_Paint);
             // 
+            // Status
+            // 
+            this.Status.AutoSize = true;
+            this.Status.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Status.Location = new System.Drawing.Point(23, 223);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(50, 20);
+            this.Status.TabIndex = 59;
+            this.Status.Text = "Status";
+            // 
+            // lblOn
+            // 
+            this.lblOn.AutoSize = true;
+            this.lblOn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOn.Location = new System.Drawing.Point(186, 224);
+            this.lblOn.Name = "lblOn";
+            this.lblOn.Size = new System.Drawing.Size(60, 20);
+            this.lblOn.TabIndex = 58;
+            this.lblOn.Text = "Process";
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblid.Location = new System.Drawing.Point(24, 10);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(24, 20);
+            this.lblid.TabIndex = 57;
+            this.lblid.Text = "ID";
+            // 
+            // lblNext
+            // 
+            this.lblNext.AutoSize = true;
+            this.lblNext.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNext.Location = new System.Drawing.Point(898, 159);
+            this.lblNext.Name = "lblNext";
+            this.lblNext.Size = new System.Drawing.Size(83, 20);
+            this.lblNext.TabIndex = 56;
+            this.lblNext.Text = "Next Stock";
+            // 
+            // lblReorder
+            // 
+            this.lblReorder.AutoSize = true;
+            this.lblReorder.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblReorder.Location = new System.Drawing.Point(898, 121);
+            this.lblReorder.Name = "lblReorder";
+            this.lblReorder.Size = new System.Drawing.Size(64, 20);
+            this.lblReorder.TabIndex = 55;
+            this.lblReorder.Text = "Reorder";
+            // 
+            // lblLast
+            // 
+            this.lblLast.AutoSize = true;
+            this.lblLast.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblLast.Location = new System.Drawing.Point(898, 80);
+            this.lblLast.Name = "lblLast";
+            this.lblLast.Size = new System.Drawing.Size(89, 20);
+            this.lblLast.TabIndex = 54;
+            this.lblLast.Text = "Last Update";
+            // 
+            // lblStorage
+            // 
+            this.lblStorage.AutoSize = true;
+            this.lblStorage.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblStorage.Location = new System.Drawing.Point(898, 42);
+            this.lblStorage.Name = "lblStorage";
+            this.lblStorage.Size = new System.Drawing.Size(123, 20);
+            this.lblStorage.TabIndex = 53;
+            this.lblStorage.Text = "Storage Number";
+            // 
+            // lblSales
+            // 
+            this.lblSales.AutoSize = true;
+            this.lblSales.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSales.Location = new System.Drawing.Point(186, 194);
+            this.lblSales.Name = "lblSales";
+            this.lblSales.Size = new System.Drawing.Size(43, 20);
+            this.lblSales.TabIndex = 52;
+            this.lblSales.Text = "Sales";
+            // 
+            // lblOut
+            // 
+            this.lblOut.AutoSize = true;
+            this.lblOut.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOut.Location = new System.Drawing.Point(186, 164);
+            this.lblOut.Name = "lblOut";
+            this.lblOut.Size = new System.Drawing.Size(34, 20);
+            this.lblOut.TabIndex = 51;
+            this.lblOut.Text = "Out";
+            // 
+            // lblValue
+            // 
+            this.lblValue.AutoSize = true;
+            this.lblValue.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblValue.Location = new System.Drawing.Point(186, 133);
+            this.lblValue.Name = "lblValue";
+            this.lblValue.Size = new System.Drawing.Size(88, 20);
+            this.lblValue.TabIndex = 50;
+            this.lblValue.Text = "Stock Value";
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblStock.Location = new System.Drawing.Point(186, 100);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(109, 20);
+            this.lblStock.TabIndex = 49;
+            this.lblStock.Text = "Opening Stock";
+            // 
+            // lblDes
+            // 
+            this.lblDes.AutoSize = true;
+            this.lblDes.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDes.Location = new System.Drawing.Point(186, 70);
+            this.lblDes.Name = "lblDes";
+            this.lblDes.Size = new System.Drawing.Size(87, 20);
+            this.lblDes.TabIndex = 48;
+            this.lblDes.Text = "Description";
+            // 
+            // lblproduct
+            // 
+            this.lblproduct.AutoSize = true;
+            this.lblproduct.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblproduct.Location = new System.Drawing.Point(187, 39);
+            this.lblproduct.Name = "lblproduct";
+            this.lblproduct.Size = new System.Drawing.Size(124, 20);
+            this.lblproduct.TabIndex = 47;
+            this.lblproduct.Text = "Product Number";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(751, 159);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 20);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Next Stock";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(751, 121);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 20);
+            this.label13.TabIndex = 45;
+            this.label13.Text = "Reorder";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(751, 80);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 20);
+            this.label12.TabIndex = 44;
+            this.label12.Text = "Last Update";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(751, 42);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(123, 20);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Storage Number";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(24, 194);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 20);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Sales";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(24, 164);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 20);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Out";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(24, 133);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 20);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Stock Value";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(24, 100);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(109, 20);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Opening Stock";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(24, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 20);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Description";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(12, 29);
+            this.label5.Location = new System.Drawing.Point(25, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 20);
             this.label5.TabIndex = 37;
@@ -434,5 +698,27 @@
         private Label lblDate;
         private Label orderNum;
         private Label label5;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Label label9;
+        private Label label10;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private Label label11;
+        private Label lblSales;
+        private Label lblOut;
+        private Label lblValue;
+        private Label lblStock;
+        private Label lblDes;
+        private Label lblproduct;
+        private Label lblNext;
+        private Label lblReorder;
+        private Label lblLast;
+        private Label lblStorage;
+        private Label lblid;
+        private Label lblOn;
+        private Label Status;
     }
 }

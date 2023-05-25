@@ -187,11 +187,7 @@ namespace FinalProjectDatabase
                         resTotal.Text = "";
                         resPayment.Text = "";
                         resDate.Text = "";
-                    }  
-
-                  
-
-
+                    }                
                 }
             }
             catch
