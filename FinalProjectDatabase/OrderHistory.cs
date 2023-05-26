@@ -235,5 +235,12 @@ namespace FinalProjectDatabase
         {
             pnBgsearch.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnBgsearch.Width, pnBgsearch.Height, 25, 25));
         }
+
+        // View Product List
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            productList view = new productList();
+            view.Show();
+        }
     }
 }

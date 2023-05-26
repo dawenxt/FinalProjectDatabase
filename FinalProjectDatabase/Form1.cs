@@ -122,7 +122,8 @@ namespace FinalProjectDatabase
         // Button = New Order
         private void btnNeworder_Click(object sender, EventArgs e)
         {
-            
+            NewOrder news = new NewOrder();
+            news.Show();
         }
 
         // Panel Logo Rounded

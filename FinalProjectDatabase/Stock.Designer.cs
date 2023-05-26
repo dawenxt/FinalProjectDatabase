@@ -48,7 +48,7 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnBgsearch = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -252,7 +252,7 @@
             // 
             this.pnBgsearch.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnBgsearch.Controls.Add(this.button3);
-            this.pnBgsearch.Controls.Add(this.button2);
+            this.pnBgsearch.Controls.Add(this.btnView);
             this.pnBgsearch.Controls.Add(this.button1);
             this.pnBgsearch.Controls.Add(this.tbSearch);
             this.pnBgsearch.Controls.Add(this.label4);
@@ -273,14 +273,15 @@
             this.button3.Text = "Copy";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnView
             // 
-            this.button2.Location = new System.Drawing.Point(968, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(287, 34);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "View Product List";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnView.Location = new System.Drawing.Point(968, 7);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(287, 34);
+            this.btnView.TabIndex = 3;
+            this.btnView.Text = "View Product List";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // button1
             // 
@@ -677,7 +678,7 @@
         private TextBox tbSearch;
         private Button button1;
         private Button button3;
-        private Button button2;
+        private Button btnView;
         private Panel pnBg1;
         private Panel pnBg2;
         private Label label2;

@@ -80,10 +80,7 @@ namespace FinalProjectDatabase
 
         }
 
-
-
         // THIS IS DESIGN
-
         private void OrderHistory_Load(object sender, EventArgs e)
         {
             // Database
@@ -206,6 +203,13 @@ namespace FinalProjectDatabase
         private void lblDateNow_Click(object sender, EventArgs e)
         {
 
+        }
+
+        // Button View Product List
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            productList view = new productList();
+            view.Show();
         }
     }
 }

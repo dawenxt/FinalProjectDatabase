@@ -106,7 +106,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(70, 460);
+            this.label10.Location = new System.Drawing.Point(70, 464);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 15);
             this.label10.TabIndex = 67;
@@ -116,7 +116,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(70, 437);
+            this.label9.Location = new System.Drawing.Point(70, 441);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 15);
             this.label9.TabIndex = 66;
@@ -144,7 +144,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(69, 415);
+            this.label7.Location = new System.Drawing.Point(69, 419);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 15);
             this.label7.TabIndex = 63;
@@ -222,7 +222,7 @@
             // 
             this.lblAdmin.AutoSize = true;
             this.lblAdmin.ForeColor = System.Drawing.Color.White;
-            this.lblAdmin.Location = new System.Drawing.Point(137, 460);
+            this.lblAdmin.Location = new System.Drawing.Point(137, 464);
             this.lblAdmin.Name = "lblAdmin";
             this.lblAdmin.Size = new System.Drawing.Size(78, 15);
             this.lblAdmin.TabIndex = 55;
@@ -414,7 +414,7 @@
             // 
             this.lblDateEdit.AutoSize = true;
             this.lblDateEdit.ForeColor = System.Drawing.Color.White;
-            this.lblDateEdit.Location = new System.Drawing.Point(146, 437);
+            this.lblDateEdit.Location = new System.Drawing.Point(146, 441);
             this.lblDateEdit.Name = "lblDateEdit";
             this.lblDateEdit.Size = new System.Drawing.Size(78, 15);
             this.lblDateEdit.TabIndex = 78;
@@ -424,7 +424,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(152, 415);
+            this.lblTime.Location = new System.Drawing.Point(152, 419);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(78, 15);
             this.lblTime.TabIndex = 79;

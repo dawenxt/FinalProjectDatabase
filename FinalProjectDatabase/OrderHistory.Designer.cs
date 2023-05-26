@@ -55,8 +55,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.pnBgsearch = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -93,10 +92,10 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtSearch.Location = new System.Drawing.Point(77, 9);
+            this.txtSearch.Location = new System.Drawing.Point(77, 8);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(670, 31);
+            this.txtSearch.Size = new System.Drawing.Size(776, 31);
             this.txtSearch.TabIndex = 4;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -341,8 +340,7 @@
             // 
             this.pnBgsearch.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnBgsearch.Controls.Add(this.button3);
-            this.pnBgsearch.Controls.Add(this.button2);
-            this.pnBgsearch.Controls.Add(this.button1);
+            this.pnBgsearch.Controls.Add(this.btnView);
             this.pnBgsearch.Controls.Add(this.label14);
             this.pnBgsearch.Controls.Add(this.txtSearch);
             this.pnBgsearch.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -357,29 +355,20 @@
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.Location = new System.Drawing.Point(859, 7);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 34);
+            this.button3.Size = new System.Drawing.Size(103, 34);
             this.button3.TabIndex = 4;
             this.button3.Text = "Copy";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnView
             // 
-            this.button2.Location = new System.Drawing.Point(968, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(287, 34);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "View Product List";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(753, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 34);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Filter";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnView.Location = new System.Drawing.Point(968, 7);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(287, 34);
+            this.btnView.TabIndex = 3;
+            this.btnView.Text = "View Product List";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // label14
             // 
@@ -589,8 +578,7 @@
         private Button btnEdit;
         private Panel pnBgsearch;
         private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btnView;
         private Label label14;
         private Label label15;
         private Label label16;
