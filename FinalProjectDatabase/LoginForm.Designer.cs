@@ -45,6 +45,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -228,11 +229,23 @@
             this.lblError.TabIndex = 20;
             this.lblError.Text = "Invalid usernmae or Password";
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial Black", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(1051, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(52, 43);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 768);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -252,7 +265,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +288,6 @@
         private Label label8;
         private Button button1;
         private Label lblError;
+        private Button button2;
     }
 }

@@ -45,6 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblDetails = new System.Windows.Forms.Label();
             this.btnNeworder = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.pnBg.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,6 +156,7 @@
             // pnBg
             // 
             this.pnBg.BackColor = System.Drawing.Color.DarkGray;
+            this.pnBg.Controls.Add(this.btnLogout);
             this.pnBg.Controls.Add(this.btnSettings);
             this.pnBg.Controls.Add(this.btnSupport);
             this.pnBg.Controls.Add(this.button2);
@@ -250,6 +252,17 @@
             this.btnNeworder.UseVisualStyleBackColor = true;
             this.btnNeworder.Click += new System.EventHandler(this.btnNeworder_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Font = new System.Drawing.Font("Lexend Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.Location = new System.Drawing.Point(54, 810);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(148, 45);
+            this.btnLogout.TabIndex = 22;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // Form1
             // 
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -287,5 +300,6 @@
         private Label label6;
         private Button btnSupport;
         private Button btnSettings;
+        private Button btnLogout;
     }
 }

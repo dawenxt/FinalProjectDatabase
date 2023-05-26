@@ -132,6 +132,11 @@ namespace FinalProjectDatabase
             panelLogo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelLogo.Width, panelLogo.Height, 25, 25));
         }
 
-        
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm logout = new LoginForm();
+            logout.Show();
+            this.Hide();
+        }
     }
 }
